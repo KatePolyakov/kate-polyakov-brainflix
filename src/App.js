@@ -1,10 +1,9 @@
-
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
     <div>
-    develop branch
+      <p className="app">feature-01-partials branch. Typography works!!</p>
     </div>
   );
 }

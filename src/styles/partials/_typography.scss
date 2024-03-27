@@ -1,0 +1,53 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@font-face {
+  font-family: 'Avenir-Regular';
+  src: url('../../assets/fonts/AvenirNextLTPro-Regular.otf') format('opentype'),
+    url('../../assets/fonts/AvenirNextLTPro.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir-Demi';
+  src: url('../../assets/fonts/AvenirNextLTPro-Demi.otf') format('opentype'),
+    url('../../assets/fonts/AvenirNextLTProDemi.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir-bold';
+  src: url('../../assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype'),
+    url('../../assets/fonts/AvenirNextLTProBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin fonts-site-regular($font-size, $line-height) {
+  font-family: 'Avenir-Regular';
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin fonts-site-demi($font-size, $line-height) {
+  font-family: 'Avenir-Demi';
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+
+@mixin fonts-site-bold($font-size, $line-height) {
+  font-family: 'Avenir-bold';
+  font-style: normal;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+//mobile
+@mixin mobile-header-bold {
+  @include fonts-site-bold(1.5rem, 2rem);
+}
