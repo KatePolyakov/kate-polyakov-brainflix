@@ -1,9 +1,12 @@
+import React from 'react';
+
 import './App.scss';
+import { Navigation } from './components/Navigation';
 
 function App() {
   return (
     <div>
-      <p className="app">Navigation</p>
+      <Navigation />
     </div>
   );
 }

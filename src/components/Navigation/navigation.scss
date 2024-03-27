@@ -1,0 +1,14 @@
+.navigation {
+  &__wrapper {
+    margin: 1rem;
+  }
+  &__logo-name {
+    width: 7.5rem;
+    height: 1.563rem;
+  }
+
+  &__search-bar {
+    background-image: url('../../assets/images/icons/search.svg');
+    background-repeat: no-repeat;
+  }
+}
