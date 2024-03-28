@@ -6,6 +6,7 @@ import { Navigation } from './components/Navigation';
 function App() {
   return (
     <div>
+    <p>Navigation done</p>
       <Navigation />
     </div>
   );
