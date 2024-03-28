@@ -1,14 +1,100 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
 .navigation {
   &__wrapper {
-    margin: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include tablet {
+      padding: 1.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      padding: 1.5rem 5rem;
+    }
   }
   &__logo-name {
     width: 7.5rem;
     height: 1.563rem;
+    align-self: center;
+  }
+
+  &__search-buttons-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__search-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 
   &__search-bar {
     background-image: url('../../assets/images/icons/search.svg');
     background-repeat: no-repeat;
+    background-color: $alabaster;
+    background-position: 10px 9px;
+    padding: 11.2px 20px 11.2px 40px;
+    border-radius: 4px;
+    border: 1px solid $mercury;
+  }
+
+  &__avatar-mobile {
+    border-radius: 50%;
+    height: 2.25rem;
+    width: 2.25rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__upload-button {
+    align-self: center;
+    border: none;
+    border-radius: 4px;
+    width: 17rem;
+    height: 2.5rem;
+    background-image: url('../../assets/images/icons/upload.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    color: $white;
+    @include mobile-label-buttons;
+    background-color: $brainflix-blue;
+    cursor: pointer;
+
+    @include tablet {
+      width: 9.375rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__upload-button:hover {
+    background-color: $brainflix-darkblue;
+  }
+
+  &__avatar-tablet {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      border-radius: 50%;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
 }

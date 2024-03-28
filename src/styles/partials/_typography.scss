@@ -39,7 +39,6 @@
   line-height: $line-height;
 }
 
-
 @mixin fonts-site-bold($font-size, $line-height) {
   font-family: 'Avenir-bold';
   font-style: normal;
@@ -50,4 +49,8 @@
 //mobile
 @mixin mobile-header-bold {
   @include fonts-site-bold(1.5rem, 2rem);
+}
+
+@mixin mobile-label-buttons {
+  @include fonts-site-demi(0.875rem, 1.25rem);
 }

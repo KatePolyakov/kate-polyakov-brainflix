@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Logo from '../../assets/images/logo/BrainFlix-logo.svg';
+import Avatar from '../../assets/images/images/Mohan-muruge.jpg';
 import './navigation.scss';
 
 export const Navigation = () => {
@@ -19,9 +20,13 @@ export const Navigation = () => {
                 className='navigation__search-bar'
               />
             </form>
+            <img src={Avatar} className='navigation__avatar-mobile' alt='avatar'/>
           </div>
-          <div className="navigation__upload-logo"></div>
+          <button className="navigation__upload-button">UPLOAD</button>
+          <img src={Avatar} className='navigation__avatar-tablet' alt='avatar'/>
         </div>
+
+        
       </div>
     </div>
   );
