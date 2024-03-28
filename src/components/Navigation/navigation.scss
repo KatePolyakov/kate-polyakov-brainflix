@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   &__search-bar {
@@ -67,7 +67,7 @@
     align-self: center;
     border: none;
     border-radius: 4px;
-    width: 17rem;
+    width: 18rem;
     height: 2.5rem;
     background-image: url('../../assets/images/icons/upload.svg');
     background-repeat: no-repeat;
