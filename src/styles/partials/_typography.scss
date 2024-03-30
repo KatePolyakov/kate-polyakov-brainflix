@@ -51,6 +51,22 @@
   @include fonts-site-bold(1.5rem, 2rem);
 }
 
+@mixin mobile-subheader-bold {
+  @include fonts-site-bold(1rem, 1.125rem);
+}
+
+@mixin mobile-body-demi {
+  @include fonts-site-demi(0.875rem, 1.125rem);
+}
+
+@mixin mobile-body-regular {
+  @include fonts-site-regular(0.875rem, 1.125rem);
+}
+
+@mixin mobile-body-bold {
+  @include fonts-site-bold(0.875rem, 1.125rem);
+}
+
 @mixin mobile-label-buttons {
   @include fonts-site-demi(0.875rem, 1.25rem);
 }
@@ -58,4 +74,15 @@
 //desktop & tablet
 @mixin tablet-desktop-header-bold {
   @include fonts-site-bold(2.063rem, 2.75rem);
+}
+
+@mixin tablet-desktop-subheader-bold {
+  @include fonts-site-bold(1rem, 1.375rem);
+}
+
+@mixin tablet-desktop-body-regular {
+  @include fonts-site-regular(1rem, 1.375rem);
+}
+@mixin tablet-desktop-body-bold {
+  @include fonts-site-bold(1rem, 1.375rem);
 }

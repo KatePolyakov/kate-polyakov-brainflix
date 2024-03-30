@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.comments {
+  margin-top: 1rem;
+
+  @include mobile-body-regular;
+
+  @include tablet {
+    margin-top: 1.5rem;
+
+    @include tablet-desktop-body-regular;
+  }
+
+  &__counts {
+    @include mobile-body-bold;
+
+    @include tablet {
+      @include tablet-desktop-body-bold;
+    }
+  }
+}

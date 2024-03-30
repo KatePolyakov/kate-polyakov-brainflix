@@ -13,6 +13,7 @@
     }
 
     @include desktop {
+      padding-right: 2rem;
     }
   }
 
@@ -23,24 +24,86 @@
     border-bottom: 1px solid $mercury;
     display: flex;
     flex-direction: row;
+
+    @include tablet {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__channel-date {
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     @include tablet {
       display: flex;
       flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__channel {
+    @include mobile-subheader-bold;
+
+    @include tablet {
+      @include tablet-desktop-subheader-bold;
+    }
+  }
+
+  &__date {
+    @include mobile-body-regular;
+    color: $silver;
+
+    @include tablet {
+      @include tablet-desktop-body-regular;
     }
   }
 
   &__likes-view {
+    @include mobile-body-regular;
+    color: $silver;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
     @include tablet {
+      @include tablet-desktop-body-regular;
       display: flex;
       flex-direction: row;
+      justify-content: end;
+      gap: 2rem;
     }
-    
+  }
+
+  &__view {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__likes {
+    padding-left: 0.25rem;
+    display: flex;
+    gap: 0.7rem;
+  }
+
+  &__description {
+    margin-top: 1rem;
+    @include mobile-body-regular;
+
+    @include tablet {
+      margin-top: 1.5rem;
+      @include tablet-desktop-body-regular;
+    }
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 }

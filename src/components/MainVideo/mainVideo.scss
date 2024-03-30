@@ -12,7 +12,7 @@
       width: 100%;
 
       @include tablet {
-        width: 90%;
+        width: 94%;
       }
 
       @include desktop {
@@ -26,13 +26,20 @@
     flex-direction: column;
 
     @include tablet {
-      margin: 1.5rem;
+      margin: 2.25rem 1.5rem;
     }
 
     @include desktop {
-      margin: 1.5rem 5rem;
+      margin: 2.25rem 5rem;
       display: flex;
       flex-direction: row;
+    }
+  }
+
+  &__additional {
+    @include desktop {
+      width: 281%;
+      border-right: 1px solid $mercury;
     }
   }
 }

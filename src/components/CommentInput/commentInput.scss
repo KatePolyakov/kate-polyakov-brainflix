@@ -1,0 +1,98 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.comment-input {
+  @include tablet {
+  }
+  @include desktop {
+  }
+  &__group {
+    margin-top: 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid $mercury;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      margin-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      margin-top: 1.5rem;
+      padding-right: 2rem;
+    }
+  }
+
+  &__photo {
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-top: 1.2rem;
+
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    &-input {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        @include mobile-body-demi;
+        color: $silver;
+      }
+
+      textarea {
+        @include mobile-body-regular;
+        width: 98%;
+        margin-bottom: 1rem;
+        padding: 0.34rem;
+        border: 1px solid $mercury;
+        border-radius: 4px;
+        background-color: $alabaster;
+        height: 6.406rem;
+        resize: none;
+
+        @include tablet {
+          height: 1.281rem;
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5625rem 0;
+      background-color: $brainflix-blue;
+      color: $white;
+      width: 100%;
+      align-items:center;
+    }
+
+    button:hover {
+      background-color: $brainflix-darkblue;
+    }
+  }
+}
