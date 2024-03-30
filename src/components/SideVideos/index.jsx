@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const NextVideos = (props) => {
+export const SideVideos = (props) => {
   const { setNewVideo, videoDataShort, currentVideo } = props;
 
   let videoArr = videoDataShort.filter(() => {

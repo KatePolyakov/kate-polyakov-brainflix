@@ -54,3 +54,8 @@
 @mixin mobile-label-buttons {
   @include fonts-site-demi(0.875rem, 1.25rem);
 }
+
+//desktop & tablet
+@mixin tablet-desktop-header-bold {
+  @include fonts-site-bold(2.063rem, 2.75rem);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { VideoSection } from './components/VideoSection';
 import { Navigation } from './components/Navigation';
+import { MainVideo } from './components/MainVideo';
 
 import './App.scss';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <VideoSection />
+      <MainVideo />
     </>
   );
 }

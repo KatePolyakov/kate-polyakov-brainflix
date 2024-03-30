@@ -1,0 +1,46 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.video {
+  &__title {
+    @include mobile-header-bold;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      @include tablet-desktop-header-bold;
+      padding-bottom: 1.5rem;
+    }
+
+    @include desktop {
+    }
+  }
+
+  &__statistics {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid $mercury;
+    border-bottom: 1px solid $mercury;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__channel-date {
+    width: 60%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__likes-view {
+    width: 40%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+    
+  }
+}

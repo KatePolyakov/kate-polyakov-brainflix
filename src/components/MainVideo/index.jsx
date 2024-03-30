@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 import videoData from '../../data/video-details.json';
 import videoDataShort from '../../data/videos.json';
 
-import { Comments } from '../Comments';
-import { NextVideos } from '../NextVideos';
 import { VideoDescription } from '../VideoDescription';
+import { Comments } from '../Comments';
+import { SideVideos } from '../SideVideos';
 
-export const VideoSection = () => {
+import './mainVideo.scss';
+
+export const MainVideo = () => {
   const [currentVideo, setCurrentVideo] = useState(videoData[0]);
 
   const setNewVideo = (video) => {
@@ -18,16 +20,16 @@ export const VideoSection = () => {
     }
   };
   return (
-    <div className="video">
-      <video width="320" poster={currentVideo.image} controls></video>
-      <div className="video__wrapper">
-        <div className="video__additional">
-          <div className="video__group">
-            <VideoDescription currentVideo={currentVideo} />
-          </div>
+    <div className="main">
+      <div className="main__video">
+        <video poster={currentVideo.image} controls></video>
+      </div>
+      <div className="main__wrapper">
+        <div className="main__additional">
+          <VideoDescription currentVideo={currentVideo} />
           <Comments currentVideo={currentVideo} />
         </div>
-        <NextVideos
+        <SideVideos
           setNewVideo={setNewVideo}
           videoDataShort={videoDataShort}
           currentVideo={currentVideo}
