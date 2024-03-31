@@ -50,6 +50,7 @@
       flex-direction: row;
       justify-content: space-between;
       gap: 1rem;
+      align-items: center;
     }
 
     &-input {
@@ -65,7 +66,7 @@
 
       textarea {
         @include mobile-body-regular;
-        width: 98%;
+        width: 95%;
         margin-bottom: 1rem;
         padding: 0.34rem;
         border: 1px solid $mercury;
@@ -75,7 +76,9 @@
         resize: none;
 
         @include tablet {
-          height: 1.281rem;
+          padding: 0.5rem 0.5rem;
+          height: 1.4rem;
+          width: 25.5rem;
         }
       }
     }
@@ -84,11 +87,21 @@
       cursor: pointer;
       border: none;
       border-radius: 4px;
-      padding: 0.5625rem 0;
+      padding: 0.5rem 0.75rem;
       background-color: $brainflix-blue;
       color: $white;
       width: 100%;
-      align-items:center;
+      align-items: center;
+      @include mobile-label-buttons;
+
+      @include tablet {
+        width: 214px;
+        margin-top: 2px;
+      }
+
+      img {
+        float: left;
+      }
     }
 
     button:hover {
