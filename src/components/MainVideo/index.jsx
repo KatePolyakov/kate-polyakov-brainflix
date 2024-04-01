@@ -32,6 +32,7 @@ export const MainVideo = () => {
         <SideVideos
           setNewVideo={setNewVideo}
           videoDataShort={videoDataShort}
+          videoData={videoData}
           currentVideo={currentVideo}
         />
       </div>
