@@ -52,7 +52,7 @@
     @include mobile-subheader-bold;
 
     @include tablet {
-      @include tablet-desktop-subheader-bold;
+      @include tablet-desktop-body-demi;
     }
   }
 
