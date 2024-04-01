@@ -22,6 +22,7 @@
     @include desktop {
       margin-top: 1.5rem;
       padding-right: 2rem;
+      gap: 2rem;
     }
   }
 
@@ -30,10 +31,11 @@
     width: 2.25rem;
     height: 2.25rem;
     margin-top: 1.2rem;
+    background-color: $mercury;
 
     @include tablet {
-      width: 3rem;
-      height: 3rem;
+      width: 2.5rem;
+      height: 2.5rem;
       margin-top: 0;
     }
   }

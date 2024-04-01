@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { formatTime } from '../utils/formatTime';
+import { dynamicTimestamp } from '../utils/formatTime';
 
 import likesIcon from '../../assets/images/icons/likes.svg';
 import viewsIcon from '../../assets/images/icons/views.svg';
@@ -14,7 +14,7 @@ export const VideoDescription = ({ currentVideo }) => {
       <div className="video__statistics">
         <div className="video__channel-date">
           <p className="video__channel">By {currentVideo.channel}</p>
-          <p className="video__date">{formatTime(currentVideo.timestamp)}</p>
+          <p className="video__date">{dynamicTimestamp(currentVideo.timestamp)}</p>
         </div>
         <div className="video__likes-view">
           <p className="video__view">

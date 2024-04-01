@@ -57,6 +57,7 @@
     border-radius: 50%;
     height: 2.25rem;
     width: 2.25rem;
+    background-color: $mercury;
 
     @include tablet {
       display: none;
@@ -89,6 +90,7 @@
 
   &__avatar-tablet {
     display: none;
+    background-color: $mercury;
 
     @include tablet {
       display: flex;

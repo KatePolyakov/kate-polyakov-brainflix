@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './comments.scss';
-import { formatTime } from '../utils/formatTime';
+import { dynamicTimestamp } from '../utils/formatTime';
 import { CommentInput } from '../CommentInput';
 
 export const Comments = ({ currentVideo }) => {
@@ -17,7 +17,7 @@ export const Comments = ({ currentVideo }) => {
           <div className="comments__group">
             <div className="comments__name-date">
               <p className="comments__name">{comment.name}</p>
-              <p className="comments__date">{formatTime(comment.timestamp)}</p>
+              <p className="comments__date">{dynamicTimestamp(comment.timestamp)}</p>
             </div>
             <p className="comments__comment">{comment.comment}</p>
           </div>
