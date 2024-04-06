@@ -4,11 +4,10 @@ import videoData from '../../data/video-details.json';
 import videoDataShort from '../../data/videos.json';
 
 import { VideoDescription } from '../VideoDescription/VideoDescription';
-
+import { Comments } from '../Comments/Comments';
 import { SideVideos } from '../SideVideos/SideVideos';
 
 import './mainVideo.scss';
-import { Comments } from '../Comments/Comments';
 
 export const MainVideo = () => {
   const [currentVideo, setCurrentVideo] = useState(videoData[0]);
