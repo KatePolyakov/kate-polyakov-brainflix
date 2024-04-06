@@ -2,9 +2,7 @@ import React from 'react';
 
 import './sideVideos.scss';
 
-export const SideVideos = (props) => {
-  const { setNewVideo, videoDataShort, currentVideo } = props;
-
+export const SideVideos = ({ setNewVideo, videoDataShort, currentVideo }) => {
   let videoArr = [];
   for (let i = 0; i < videoDataShort.length; i++) {
     if (videoDataShort[i].id !== currentVideo.id) {
