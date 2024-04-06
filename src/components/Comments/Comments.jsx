@@ -2,7 +2,7 @@ import React from 'react';
 
 import './comments.scss';
 import { dynamicTimestamp } from '../utils/formatTime';
-import { CommentInput } from '../CommentInput';
+import { CommentInput } from '../CommentInput/CommentInput';
 
 export const Comments = ({ currentVideo }) => {
   return (

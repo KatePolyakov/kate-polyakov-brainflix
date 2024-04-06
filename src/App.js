@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Navigation } from './components/Navigation';
-import { MainVideo } from './components/MainVideo';
+import { Navigation } from './components/Navigation/Navigation';
+import { MainVideo } from './components/MainVideo/MainVideo';
 
 import './App.scss';
 
