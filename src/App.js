@@ -6,11 +6,13 @@ import { UploadPage } from './pages/UploadPage/UploadPage';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 
 import './App.scss';
+import { Navigation } from './components/Navigation/Navigation';
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/video-player/:videoId" element={<HomePage />} />

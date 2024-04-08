@@ -3,9 +3,9 @@
 @use '../../styles/partials/variables' as *;
 
 .video-list {
-  button {
-    border: none;
-    background-color: $white;
+  a {
+    text-decoration: none;
+    color: $brainflix-darkblack;
   }
   padding-top: 1.5rem;
 
