@@ -4,7 +4,7 @@ import './comments.scss';
 import { dynamicTimestamp } from '../utils/formatTime';
 import { CommentInput } from '../CommentInput/CommentInput';
 
-export const Comments = ({ currentVideo, videoList }) => {
+export const Comments = ({ currentVideo }) => {
   return (
     <div className="comments">
       {currentVideo.comments ? (
