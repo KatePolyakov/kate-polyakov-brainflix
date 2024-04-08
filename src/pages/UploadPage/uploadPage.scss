@@ -1,0 +1,180 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload-video {
+  border-top: 1px solid $mercury;
+  padding: 1rem;
+
+  @include tablet {
+    padding: 1.5rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 5rem;
+  }
+
+  &__title-section {
+    @include mobile-header-bold;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      @include tablet-desktop-header-bold;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $mercury;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      border-bottom: 1px solid $mercury;
+      padding-bottom: 1rem;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__video-section {
+    padding-bottom: 1rem;
+    @include tablet {
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1.5rem;
+    }
+
+    @include desktop {
+      width: 33%;
+    }
+  }
+
+  &__title {
+    @include mobile-body-demi;
+    color: $silver;
+
+    @include tablet {
+      @include tablet-desktop-body-demi;
+    }
+  }
+
+  &__video {
+    width: 100%;
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__description-section {
+    @include desktop {
+      padding-top: 2rem;
+      width: 64%;
+    }
+  }
+
+  &__description-video,
+  &__title-video {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  &__input {
+    @include mobile-body-regular;
+    padding: 0.5rem;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    background-color: $alabaster;
+
+    @include tablet {
+      padding: 0.5rem 0.5rem;
+      @include tablet-desktop-body-regular;
+    }
+  }
+
+  &__textarea {
+    @include mobile-body-regular;
+
+    padding: 0.5rem;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    background-color: $alabaster;
+    resize: none;
+
+    @include tablet {
+      padding: 0.5rem 0.5rem 0.2rem;
+      @include tablet-desktop-body-regular;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      padding-top: 1.5rem;
+    }
+  }
+
+  &__cancel-button {
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 2.5rem;
+    color: $brainflix-blue;
+
+    @include mobile-label-buttons;
+    background-color: $alabaster;
+    cursor: pointer;
+
+    @include tablet {
+      width: 9.375rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__cancel-button:hover {
+    color: $brainflix-darkblue;
+    border: 1px solid $mercury;
+  }
+
+  &__publish-button {
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 2.5rem;
+    background-image: url('../../assets/images/icons/publish.svg');
+    background-repeat: no-repeat;
+    background-position: 10px 8px;
+    color: $white;
+
+    @include mobile-label-buttons;
+    background-color: $brainflix-blue;
+    cursor: pointer;
+
+    @include tablet {
+      width: 9.375rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__publish-button:hover {
+    background-color: $brainflix-darkblue;
+  }
+}
