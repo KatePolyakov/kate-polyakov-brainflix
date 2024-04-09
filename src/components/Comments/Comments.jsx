@@ -15,22 +15,24 @@ export const Comments = ({ currentVideo, getCurrentVideo }) => {
 
       <CommentInput currentVideo={currentVideo} getCurrentVideo={getCurrentVideo} />
       {currentVideo.comments
-        ? currentVideo.comments.sort((firstComment, secondComment) => {
-          return secondComment.timestamp - firstComment.timestamp
-        }).map((comment, i) => (
-            <div key={i} className="comments__exists">
-              <div className="comments__img-group">
-                <div className="comments__img"></div>
-              </div>
-              <div className="comments__group">
-                <div className="comments__name-date">
-                  <p className="comments__name">{comment.name}</p>
-                  <p className="comments__date">{dynamicTimestamp(comment.timestamp)}</p>
+        ? currentVideo.comments
+            .sort((firstComment, secondComment) => {
+              return secondComment.timestamp - firstComment.timestamp;
+            })
+            .map((comment, i) => (
+              <div key={i} className="comments__exists">
+                <div className="comments__img-group">
+                  <div className="comments__img"></div>
                 </div>
-                <p className="comments__comment">{comment.comment}</p>
+                <div className="comments__group">
+                  <div className="comments__name-date">
+                    <p className="comments__name">{comment.name}</p>
+                    <p className="comments__date">{dynamicTimestamp(comment.timestamp)}</p>
+                  </div>
+                  <p className="comments__comment">{comment.comment}</p>
+                </div>
               </div>
-            </div>
-          ))
+            ))
         : 'No comments'}
     </div>
   );
