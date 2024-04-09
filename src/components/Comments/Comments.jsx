@@ -4,7 +4,7 @@ import './comments.scss';
 import { dynamicTimestamp } from '../utils/formatTime';
 import { CommentInput } from '../CommentInput/CommentInput';
 
-export const Comments = ({ currentVideo }) => {
+export const Comments = ({ currentVideo, getCurrentVideo }) => {
   return (
     <div className="comments">
       {currentVideo.comments ? (
@@ -13,10 +13,12 @@ export const Comments = ({ currentVideo }) => {
         ''
       )}
 
-      <CommentInput />
+      <CommentInput currentVideo={currentVideo} getCurrentVideo={getCurrentVideo} />
       {currentVideo.comments
-        ? currentVideo.comments.map((comment) => (
-            <div key={comment.id} className="comments__exists">
+        ? currentVideo.comments.sort((firstComment, secondComment) => {
+          return secondComment.timestamp - firstComment.timestamp
+        }).map((comment, i) => (
+            <div key={i} className="comments__exists">
               <div className="comments__img-group">
                 <div className="comments__img"></div>
               </div>

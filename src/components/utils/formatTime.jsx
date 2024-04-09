@@ -22,46 +22,46 @@ export function dynamicTimestamp(timestamp) {
   let tsText = '';
 
   switch (true) {
-      case (diffMins < 1):
-          tsText = '< 1 minute ago';
-          break;
-      case (diffMins < 2):
-          tsText = `${parseInt(diffMins)} minute ago`;
-          break;
-      case (diffMins < 60):
-          tsText = `${parseInt(diffMins)} minutes ago`;
-          break;
-      case (diffHours === 1):
-          tsText = `1 hour ago`;
-          break;
-      case (diffHours < 24):
-          tsText = `${parseInt(diffHours)} hours ago`;
-          break;
-      case (diffHours < 48):
-          tsText = `1 day ago`;
-          break;
-      case (diffDays < 8):
-          tsText = `${diffDays} days ago`;
-          break;
-      case (diffWeeks < 2):
-          tsText = `1 week ago`;
-          break;
-      case (diffWeeks < 5):
-          tsText = `${diffWeeks} weeks ago`;
-          break;
-      case (diffMonths < 2):
-          tsText = `1 month ago`;
-          break;
-      case (diffMonths < 12):
-          tsText = `${diffMonths} months ago`;
-          break;
-      case (diffYears < 2):
-          tsText = `1 year ago`;
-          break;
-      case (diffYears >= 2):
-          tsText = `${diffYears} years ago`;
-          break;
-      default:
-  };
+    case diffMins < 1:
+      tsText = '< 1 minute ago';
+      break;
+    case diffMins < 2:
+      tsText = `${parseInt(diffMins)} minute ago`;
+      break;
+    case diffMins < 60:
+      tsText = `${parseInt(diffMins)} minutes ago`;
+      break;
+    case diffHours === 1:
+      tsText = `1 hour ago`;
+      break;
+    case diffHours < 24:
+      tsText = `${parseInt(diffHours)} hours ago`;
+      break;
+    case diffHours < 48:
+      tsText = `1 day ago`;
+      break;
+    case diffDays < 8:
+      tsText = `${diffDays} days ago`;
+      break;
+    case diffWeeks < 2:
+      tsText = `1 week ago`;
+      break;
+    case diffWeeks < 5:
+      tsText = `${diffWeeks} weeks ago`;
+      break;
+    case diffMonths < 2:
+      tsText = `1 month ago`;
+      break;
+    case diffMonths < 12:
+      tsText = `${diffMonths} months ago`;
+      break;
+    case diffYears < 2:
+      tsText = `1 year ago`;
+      break;
+    case diffYears >= 2:
+      tsText = `${diffYears} years ago`;
+      break;
+    default:
+  }
   return tsText;
-};
+}

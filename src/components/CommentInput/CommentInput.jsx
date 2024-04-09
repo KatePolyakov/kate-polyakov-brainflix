@@ -1,16 +1,39 @@
 import React from 'react';
+import axios from 'axios';
 
 import ProfilePhoto from '../../assets/images/images/Mohan-muruge.jpg';
-import AddIcon from '../../assets/images/icons/add_comment.svg'
+import AddIcon from '../../assets/images/icons/add_comment.svg';
 
 import './commentInput.scss';
 
-export const CommentInput = () => {
+const api = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
+const APIKey = '31012632-a2fa-467b-814e-11f3fa402723';
+
+export const CommentInput = ({ currentVideo, getCurrentVideo }) => {
+  //console.log(`${api}/videos/${currentVideo.id}/comments?api_key=${APIKey}`);
+  const handleAddComment = (e) => {
+    e.preventDefault();
+    axios
+      .post(`${api}/videos/${currentVideo.id}/comments?api_key=${APIKey}`, {
+        name: 'Kate Polyakov',
+        comment: e.target.commentAdd.value,
+      })
+      .then((res) => {
+        console.log(currentVideo.id);
+        getCurrentVideo(currentVideo.id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    e.target.reset();
+  };
+
   return (
     <div className="comment-input">
       <div className="comment-input__group">
         <img src={ProfilePhoto} alt="comment-input__photo" className="comment-input__photo" />
-        <form className="comment-input__form" id="comment-input__form">
+        <form className="comment-input__form" id="comment-input__form" onSubmit={handleAddComment}>
           <div className="comment-input__form-input">
             <label htmlFor="commentAdd">JOIN THE CONVERSATION</label>
             <textarea
@@ -20,7 +43,8 @@ export const CommentInput = () => {
               id="commentAdd"
               placeholder="Add a new comment"></textarea>
           </div>
-          <button type="submit" className="comment-input__form-button"><img src={AddIcon} alt='add__comment' />
+          <button type="submit" className="comment-input__form-button">
+            <img src={AddIcon} alt="add__comment" />
             COMMENT
           </button>
         </form>

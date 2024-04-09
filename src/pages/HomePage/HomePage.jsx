@@ -54,7 +54,7 @@ export const HomePage = () => {
       <div className="main__wrapper">
         <div className="main__additional">
           <VideoDescription currentVideo={currentVideo} />
-          <Comments currentVideo={currentVideo} />
+          <Comments currentVideo={currentVideo} getCurrentVideo={getCurrentVideo} />
         </div>
         <SideVideos videoList={videoList} currentVideo={currentVideo} />
       </div>
