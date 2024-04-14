@@ -6,15 +6,13 @@ import AddIcon from '../../assets/images/icons/add_comment.svg';
 
 import './commentInput.scss';
 
-const api = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
-const APIKey = '31012632-a2fa-467b-814e-11f3fa402723';
+const API_URL = 'http://localhost:8080';
 
 export const CommentInput = ({ currentVideo, getCurrentVideo }) => {
-  //console.log(`${api}/videos/${currentVideo.id}/comments?api_key=${APIKey}`);
   const handleAddComment = (e) => {
     e.preventDefault();
     axios
-      .post(`${api}/videos/${currentVideo.id}/comments?api_key=${APIKey}`, {
+      .post(`${API_URL}/videos/${currentVideo.id}/comments`, {
         name: 'Kate Polyakov',
         comment: e.target.commentAdd.value,
       })

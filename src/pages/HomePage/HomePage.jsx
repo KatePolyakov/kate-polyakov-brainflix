@@ -8,8 +8,7 @@ import { SideVideos } from '../../components/SideVideos/SideVideos';
 
 import './homePage.scss';
 
-const api = 'https://unit-3-project-api-0a5620414506.herokuapp.com';
-const APIKey = '31012632-a2fa-467b-814e-11f3fa402723';
+const API_URL = 'http://localhost:8080';
 
 export const HomePage = () => {
   const [videoList, setVideoList] = useState([]); //List of video, short
@@ -18,8 +17,9 @@ export const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get(`${api}/videos?api_key=${APIKey}`)
+      .get(`${API_URL}/videos`)
       .then((response) => {
+        console.log('Response data', response.data[0].id);
         setVideoList(response.data);
       })
       .catch((error) => {
@@ -37,7 +37,7 @@ export const HomePage = () => {
 
   function getCurrentVideo(videoId) {
     axios
-      .get(`${api}/videos/${videoId}?api_key=${APIKey}`)
+      .get(`${API_URL}/videos/${videoId}`)
       .then((response) => {
         setCurrentVideo(response.data);
       })

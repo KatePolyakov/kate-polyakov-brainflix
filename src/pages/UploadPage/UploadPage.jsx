@@ -1,36 +1,37 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 import UploadVideoPreview from '../../assets/images/images/Upload-video-preview.jpg';
 import './uploadPage.scss';
 
+const API_URL = 'http://localhost:8080';
+
 export const UploadPage = () => {
-  const [videoTitle, setVideoTitle] = useState('');
-  const [videoDescription, setVideoDescription] = useState('');
   const navigate = useNavigate();
-
-  const handleAddTitle = (event) => {
-    setVideoTitle(event.target.value);
-  };
-
-  const handleAddDescription = (event) => {
-    setVideoDescription(event.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmitVideo = (e) => {
     e.preventDefault();
-    if (videoTitle === '' || videoDescription === '') {
-      alert('Please fill the form!');
-    } else {
-      alert('Publishing!');
-      navigate('/');
-    }
+    axios
+      .post(`${API_URL}/videos`, {
+        title: e.target.videoTitle.value,
+        description: e.target.videoDescription.value,
+      })
+      .then((response) => {
+        alert('Video is uploaded');
+        e.target.reset();
+        navigate('/');
+      })
+      .catch((error) => {
+        let messageErr = error.response.data;
+        alert(messageErr);
+        console.log(`Post request for upload video with: ${error}`);
+      });
   };
 
   return (
     <div className="upload-video">
       <p className="upload-video__title-section">Upload Video</p>
-      <form className="upload-video__form" onSubmit={(e) => handleSubmit(e)}>
+      <form className="upload-video__form" onSubmit={(e) => handleSubmitVideo(e)}>
         <div className="upload-video__wrapper">
           <div className="upload-video__video-section">
             <label className="upload-video__title">VIDEO THUMBNAIL</label>
@@ -43,8 +44,7 @@ export const UploadPage = () => {
                 className="upload-video__input"
                 type="text"
                 placeholder="Add a title to your video"
-                value={videoTitle}
-                onChange={handleAddTitle}
+                id="videoTitle"
               />
             </div>
             <div className="upload-video__description-video">
@@ -54,14 +54,18 @@ export const UploadPage = () => {
                 type="text"
                 placeholder="Add a description to your video"
                 rows={5}
-                value={videoDescription}
-                onChange={handleAddDescription}
+                id="videoDescription"
               />
             </div>
           </div>
         </div>
         <div className="upload-video__buttons">
-          <button className="upload-video__cancel-button" link="/">CANCEL</button>
+          <Link to="/">
+            <button className="upload-video__cancel-button">
+              CANCEL
+            </button>
+          </Link>
+
           <button className="upload-video__publish-button">PUBLISH</button>
         </div>
       </form>
