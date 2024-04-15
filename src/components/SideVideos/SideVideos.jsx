@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import './sideVideos.scss';
 
 export const SideVideos = ({ currentVideo, videoList }) => {
-
   return (
     <div className="video-list">
       <p className="video-list__title">NEXT VIDEOS</p>
@@ -14,7 +13,11 @@ export const SideVideos = ({ currentVideo, videoList }) => {
           .filter((video) => video.id !== currentVideo.id)
           .map((video) => (
             <>
-              <Link key={video.id} to={`/video-player/${video.id}`} className="video-list__video">
+              <Link
+                key={video.id}
+                to={`/video-player/${video.id}`}
+                className="video-list__video"
+                onClick={() => window.scrollTo(0, 0)}>
                 <img src={video.image} alt={video.title} className="video-list__img" />
                 <div className="video-list__title-channel">
                   <p className="video-list__video-title">{video.title}</p>
