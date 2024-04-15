@@ -43,6 +43,10 @@
     gap: 2rem;
   }
 
+  &__search-form {
+    width: 100%;
+  }
+
   &__search-bar {
     background-image: url('../../assets/images/icons/search.svg');
     background-repeat: no-repeat;
@@ -51,6 +55,11 @@
     padding: 11.2px 20px 11.2px 40px;
     border-radius: 4px;
     border: 1px solid $mercury;
+    width: 80%;
+
+    @include tablet {
+      width: 9.813rem;
+    }
   }
 
   &__avatar-mobile {

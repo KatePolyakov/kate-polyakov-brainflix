@@ -15,7 +15,7 @@ export const Navigation = () => {
 
         <div className="navigation__search-buttons-group">
           <div className="navigation__search-logo">
-            <form>
+            <form className="navigation__search-form">
               <input
                 type="text"
                 name="search"

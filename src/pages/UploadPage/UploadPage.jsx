@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,15 @@ import './uploadPage.scss';
 const API_URL = 'http://localhost:8080';
 
 export const UploadPage = () => {
+  const PageTitle = () => {
+    useEffect(() => {
+      document.title = 'Upload Page';
+    }, []);
+  };
+
+  PageTitle();
+
+  
   const navigate = useNavigate();
   const handleSubmitVideo = (e) => {
     e.preventDefault();

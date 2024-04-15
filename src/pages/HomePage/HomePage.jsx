@@ -15,6 +15,14 @@ export const HomePage = () => {
   const [currentVideo, setCurrentVideo] = useState({});
   const { videoId } = useParams();
 
+  const PageTitle = () => {
+    useEffect(() => {
+      document.title = 'Home Page';
+    }, []);
+  };
+
+  PageTitle();
+
   useEffect(() => {
     axios
       .get(`${API_URL}/videos`)
